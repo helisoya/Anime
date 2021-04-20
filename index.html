@@ -65,43 +65,26 @@
                         <div class="container">
                             <div class="row justify-content-center">
 								<div class="col-lg-11">
-									<p>Episode 1</p>
+								<h2>Harold's Quest</h2>
+								<br></br>
+								<h5 id="ep"> Episode 1</h5>
+								<br></br>
+								<figure id="video_player">
 									<video controls width="70%">
 										<source src="videos\\hqs1\\ep1.webm"
 										type="video/webm">
 									</video>
-									<br>-------------------</br>
-									<p>Episode 2</p>
-									<video controls width="70%">
-										<source src="videos\\hqs1\\ep2.webm"
-										type="video/webm">
-									</video>
-									<br>-------------------</br>
-									<p>Episode 3</p>
-									<video controls width="70%">
-										<source src="videos\\hqs1\\ep3.webm"
-										type="video/webm">
-									</video>
-									<p>Episode 4</p>
-									<video controls width="70%">
-										<source src="videos\\hqs1\\ep4.webm"
-										type="video/webm">
-									</video>
-									<p>Episode 5</p>
-									<video controls width="70%">
-										<source src="videos\\hqs1\\ep5.webm"
-										type="video/webm">
-									</video>
-									<p>Episode 6</p>
-									<video controls width="70%">
-										<source src="videos\\hqs1\\ep6.webm"
-										type="video/webm">
-									</video>
-									<p>Episode 7</p>
-									<video controls width="70%">
-										<source src="videos\\hqs1\\ep7.webm"
-										type="video/webm">
-									</video>
+								
+									<ul>
+										<li><a href="videos\\hqs1\\ep1.webm">Epidode 1</a></li>
+										<li><a href="videos\\hqs1\\ep2.webm">Epidode 2</a></li>
+										<li><a href="videos\\hqs1\\ep3.webm">Epidode 3</a></li>
+										<li><a href="videos\\hqs1\\ep4.webm">Epidode 4</a></li>
+										<li><a href="videos\\hqs1\\ep5.webm">Epidode 5</a></li>
+										<li><a href="videos\\hqs1\\ep6.webm">Epidode 6</a></li>
+										<li><a href="videos\\hqs1\\ep7.webm">Epidode 7</a></li>
+									</ul>
+								</figure>
                                 </div>
                             </div>
                         </div>
@@ -109,6 +92,27 @@
                 </div>
             </div>
         </div>
+
+		<script type="text/javascript">
+			var video_player = document.getElementById("video_player");
+			links = video_player.getElementsByTagName('a');
+			for(var i=0;i<links.length;i++){
+				links[i].onclick = handler;
+			}
+			
+			function handler(e){
+				e.preventDefault();
+				videotarget=this.getAttribute("href");
+				filename=videotarget.substr(0,videotarget.lastIndexOf('.'))||videotarget;
+				video=document.querySelector('#video_player video');
+				video.removeAttribute('poster');
+				source=document.querySelector('#video_player video source');
+				source.src = filename  + ".webm";
+				document.getElementById("ep").innerHTML = "Episode " + filename[filename.length-1];toString(); 
+				video.load();
+			}
+		
+		</script>
 
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
