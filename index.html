@@ -73,20 +73,20 @@
 								<br></br>
 								<figure id="video_player">
 									<video controls width="70%">
-										<source src="videos\\hqs1\\ep1.webm"
-										type="video/webm">
+										<source src="videos\\hqs1\\ep1.mp4"
+										type="video/mp4">
 									</video>
 								
 									<ul>
-										<li><a href="videos\\hqs1\\ep1.webm">Epidode 1</a></li>
-										<li><a href="videos\\hqs1\\ep2.webm">Epidode 2</a></li>
-										<li><a href="videos\\hqs1\\ep3.webm">Epidode 3</a></li>
-										<li><a href="videos\\hqs1\\ep4.webm">Epidode 4</a></li>
-										<li><a href="videos\\hqs1\\ep5.webm">Epidode 5</a></li>
-										<li><a href="videos\\hqs1\\ep6.webm">Epidode 6</a></li>
-										<li><a href="videos\\hqs1\\ep7.webm">Epidode 7</a></li>
-										<li><a href="videos\\hqs1\\ep8.webm">Epidode 8</a></li>
-										<li><a href="videos\\hqs1\\ep9.webm">Epidode 9</a></li>
+										<li><a href="videos\\hqs1\\ep1.mp4">Epidode 1</a></li>
+										<li><a href="videos\\hqs1\\ep2.mp4">Epidode 2</a></li>
+										<li><a href="videos\\hqs1\\ep3.mp4">Epidode 3</a></li>
+										<li><a href="videos\\hqs1\\ep4.mp4">Epidode 4</a></li>
+										<li><a href="videos\\hqs1\\ep5.mp4">Epidode 5</a></li>
+										<li><a href="videos\\hqs1\\ep6.mp4">Epidode 6</a></li>
+										<li><a href="videos\\hqs1\\ep7.mp4">Epidode 7</a></li>
+										<li><a href="videos\\hqs1\\ep8.mp4">Epidode 8</a></li>
+										<li><a href="videos\\hqs1\\ep9.mp4">Epidode 9</a></li>
 									</ul>
 								</figure>
                                 </div>
@@ -111,7 +111,7 @@
 				video=document.querySelector('#video_player video');
 				video.removeAttribute('poster');
 				source=document.querySelector('#video_player video source');
-				source.src = filename  + ".webm";
+				source.src = filename  + ".mp4";
 				document.getElementById("ep").innerHTML = "Episode " + filename[filename.length-1];toString(); 
 				video.load();
 			}
