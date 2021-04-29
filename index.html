@@ -73,23 +73,23 @@
 								<br></br>
 								<figure id="video_player">
 									<video controls width="70%">
-										<source src="videos\\hqs1\\ep1.mp4"
+										<source src="videos/hqs1/ep1.mp4"
 										type="video/mp4">
 									</video>
 								
 									<ul>
-										<li><a href="videos\\hqs1\\ep1.mp4">Epidode 1</a></li>
-										<li><a href="videos\\hqs1\\ep2.mp4">Epidode 2</a></li>
-										<li><a href="videos\\hqs1\\ep3.mp4">Epidode 3</a></li>
-										<li><a href="videos\\hqs1\\ep4.mp4">Epidode 4</a></li>
-										<li><a href="videos\\hqs1\\ep5.mp4">Epidode 5</a></li>
-										<li><a href="videos\\hqs1\\ep6.mp4">Epidode 6</a></li>
-										<li><a href="videos\\hqs1\\ep7.mp4">Epidode 7</a></li>
-										<li><a href="videos\\hqs1\\ep8.mp4">Epidode 8</a></li>
-										<li><a href="videos\\hqs1\\ep9.mp4">Epidode 9</a></li>
-										<li><a href="videos\\hqs1\\ep10.mp4">Epidode 10</a></li>
-										<li><a href="videos\\hqs1\\ep11.mp4">Epidode 11</a></li>
-										<li><a href="videos\\hqs1\\ep12.mp4">Epidode 12</a></li>
+										<li><a href="videos/hqs1/ep1.mp4">Epidode 1</a></li>
+										<li><a href="videos/hqs1/ep2.mp4">Epidode 2</a></li>
+										<li><a href="videos/hqs1/ep3.mp4">Epidode 3</a></li>
+										<li><a href="videos/hqs1/ep4.mp4">Epidode 4</a></li>
+										<li><a href="videos/hqs1/ep5.mp4">Epidode 5</a></li>
+										<li><a href="videos/hqs1/ep6.mp4">Epidode 6</a></li>
+										<li><a href="videos/hqs1/ep7.mp4">Epidode 7</a></li>
+										<li><a href="videos/hqs1/ep8.mp4">Epidode 8</a></li>
+										<li><a href="videos/hqs1/ep9.mp4">Epidode 9</a></li>
+										<li><a href="videos/hqs1/ep10.mp4">Epidode 10</a></li>
+										<li><a href="videos/hqs1/ep11.mp4">Epidode 11</a></li>
+										<li><a href="videos/hqs1/ep12.mp4">Epidode 12</a></li>
 									</ul>
 								</figure>
                                 </div>
@@ -115,7 +115,7 @@
 				video.removeAttribute('poster');
 				source=document.querySelector('#video_player video source');
 				source.src = filename  + ".mp4";
-				document.getElementById("ep").innerHTML = "Episode " + filename[filename.length-1];toString(); 
+				document.getElementById("ep").innerHTML = "Episode " + filename.replace("videos/hqs1/ep"," ");toString(); 
 				video.load();
 			}
 		
