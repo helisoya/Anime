@@ -47,6 +47,21 @@
                             <img class="img-fluid" src="img/covers/hqs1.png" alt="" />
                         </div>
                     </div>
+                    <!-- Harold's Quest Season 2 -->
+                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white">
+								Type : Aventure
+								<br></br>
+								Episodes : 0
+								<br></br>
+								Language : Français
+								</div>
+                            </div>
+                            <img class="img-fluid" src="img/covers/hqs2.png" alt="" />
+                        </div>
+                    </div>
         </section>
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
@@ -54,7 +69,7 @@
         </div>
 
 		
-        <!-- Casus Belli 1 Modal -->
+        <!-- Harold Quest Season 1 Modal -->
         <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
             <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
@@ -99,9 +114,51 @@
                 </div>
             </div>
         </div>
+		
+		
+        <!-- Harold Quest Season 2 Modal -->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+								<div class="col-lg-11">
+								<h2>Harold's Quest 2</h2>
+								<br></br>
+								<h7>Harold est de nouveau envoyé à Runan, mais cette fois pas de vacances pour lui. Il doit réaliser quelques taches pour son maître, mais un nouvel ennemi rode...</h7>
+								<br></br>
+								<h5 id="ep"> Opening</h5>
+								<br></br>
+								<figure id="video_player2">
+									<video controls width="70%">
+										<source src="videos/hqs2/op.mp4"
+										type="video/mp4">
+									</video>
+								
+									<ul>
+										<li><a href="videos/hqs2/op.mp4">Opening</a></li>
+									</ul>
+								</figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 		<script type="text/javascript">
 			var video_player = document.getElementById("video_player");
+			links = video_player.getElementsByTagName('a');
+			for(var i=0;i<links.length;i++){
+				links[i].onclick = handler;
+			}
+			
+			video_player = document.getElementById("video_player2");
 			links = video_player.getElementsByTagName('a');
 			for(var i=0;i<links.length;i++){
 				links[i].onclick = handler;
@@ -111,12 +168,34 @@
 				e.preventDefault();
 				videotarget=this.getAttribute("href");
 				filename=videotarget.substr(0,videotarget.lastIndexOf('.'))||videotarget;
+				
 				video=document.querySelector('#video_player video');
 				video.removeAttribute('poster');
 				source=document.querySelector('#video_player video source');
 				source.src = filename  + ".mp4";
-				document.getElementById("ep").innerHTML = "Episode " + filename.replace("videos/hqs1/ep"," ");toString(); 
+				if(filename!=filename.replace("videos/hqs1/ep"," ")){
+					filename = filename.replace("videos/hqs1/ep"," ");
+					document.getElementById("ep").innerHTML = "Episode " + filename;
+				}else if (filename!=filename.replace("videos/hqs2/ep"," ")){
+					filename = filename.replace("videos/hqs2/ep"," ");
+					document.getElementById("ep").innerHTML = "Episode " + filename;
+				}else{
+					document.getElementById("ep").innerHTML = "Opening";
+				}
+				
+				
+				
+				toString(); 
 				video.load();
+				
+				video=document.querySelector('#video_player2 video');
+				video.removeAttribute('poster');
+				source=document.querySelector('#video_player2 video source');
+				source.src = videotarget.substr(0,videotarget.lastIndexOf('.'))||videotarget  + ".mp4";
+				source.src+=".mp4";
+				toString(); 
+				video.load();
+				
 			}
 		
 		</script>
