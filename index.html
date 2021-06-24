@@ -84,7 +84,7 @@
 								<br></br>
 								<h7>Harold est très content, il a enfin une semaine de vacances ! Il a décidé de partir dans la province de Runan afin d'admirer sa beauté. Mais tout ne se passera pas comme prévu...</h7>
 								<br></br>
-								<h5 id="ep"> Episode 1</h5>
+								<h5 id="ep-1"> Episode 1</h5>
 								<br></br>
 								<figure id="video_player">
 									<video controls width="70%">
@@ -131,7 +131,7 @@
 								<br></br>
 								<h7>Harold est de nouveau envoyé à Runan, mais cette fois pas de vacances pour lui. Il doit réaliser quelques taches pour son maître, mais un nouvel ennemi rode...</h7>
 								<br></br>
-								<h5 id="ep"> Opening</h5>
+								<h5 id="ep-2"> Opening</h5>
 								<br></br>
 								<figure id="video_player2">
 									<video controls width="70%">
@@ -176,12 +176,13 @@
 				source.src = filename  + ".mp4";
 				if(filename!=filename.replace("videos/hqs1/ep"," ")){
 					filename = filename.replace("videos/hqs1/ep"," ");
-					document.getElementById("ep").innerHTML = "Episode " + filename;
+					document.getElementById("ep-1").innerHTML = "Episode " + filename;
 				}else if (filename!=filename.replace("videos/hqs2/ep"," ")){
 					filename = filename.replace("videos/hqs2/ep"," ");
-					document.getElementById("ep").innerHTML = "Episode " + filename;
+					document.getElementById("ep-2").innerHTML = "Episode " + filename;
 				}else{
-					document.getElementById("ep").innerHTML = "Opening";
+					document.getElementById("ep-1").innerHTML = "Opening";
+					document.getElementById("ep-2").innerHTML = "Opening";
 				}
 				
 				
